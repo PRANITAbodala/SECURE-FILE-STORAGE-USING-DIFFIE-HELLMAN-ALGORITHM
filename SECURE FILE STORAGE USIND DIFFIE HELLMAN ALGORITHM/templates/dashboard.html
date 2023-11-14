@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<title>Dashboard</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+</head>
+
+<body>
+	
+
+
+   
+  <section class="section section-dark">
+        
+    <div class="row">
+      
+    {% if 'user_id' in session %}
+    
+    <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+    <a href="{{ url_for('login') }}">Login</a>
+    <a href="{{ url_for('register') }}">Register</a>
+    {% endif %}
+
+  		<h1 class = "neon text-style">Secure File Storage</h1> 
+        
+	  </div>
+	
+    <div class="pimg1">
+        
+		
+      
+
+         <div class="row">
+          <section>
+            
+          </section>
+            <div class="col-lg-4">
+            <img class="rounded-circle" src="https://styles.redditmedia.com/t5_2r97t/styles/communityIcon_ri05w19k4zh01.png" alt="Generic placeholder image" width="140" height="140">
+            <h2>Upload Files</h2>
+            <p>The first step for the user was to register on our platform . On registering the user would be
+            given an automatically generated private key that would be used by the user for transactions.
+            For security purposes the private key of the user is not stored in the database.</p>
+            <p><a class="btn btn-primary" href="upload-file" role="button">File-Upload </a></p>
+            </div><!-- /.col-lg-4 -->
+
+            <div class="col-lg-4">
+            <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmUUSo7THCDrJG629AyXKTeQr1Cl-CpU6jgQ4WD63gmZYyrvU6SrKx17XxiIH7D8z7M_w&usqp=CAU" alt="Generic placeholder image" width="140" height="140">
+            <h2>File Directory</h2>
+            <p>Clicking the file directory option on the page takes the user to the above page which
+            displays all the different files stored on the cloud.Selecting different options like download-public key lists the public keys of the registered
+            users which the user can download and use for authenticating the user when someone tries
+            to open his uploaded file.</p>
+
+            <p><a class="btn btn-primary" href="file-directory" role="button">File Directory </a></p>
+            </div><!-- /.col-lg-4 -->
+
+
+            <div class="col-lg-4">
+            <img class="rounded-circle" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Generic placeholder image" width="140" height="140">
+            <h2>Register User</h2>
+            <p>Clicking on register user tab take the user to a page where the user registers himself with the
+            platform and generated he Secret Key ( Private ) and Public Keys for the Users. Those public key and private keys cannot be altered and is stored in database. These can be used for file sharing and for decrypting the files which was actually sent by the sender.</p>
+            <p><a class="btn btn-primary" href="register" role="button">Register User </a></p>
+            
+
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+            <img class="rounded-circle" src="https://www.pngfind.com/pngs/m/102-1024354_key-png-image-with-transparent-background-clip-art.png" alt="Generic placeholder image" width="140" height="140">
+            <h2>public-key-directory</h2>
+            <p>Here the user can able to see the list of public keys in which he can able to send the required files only to that particular Reciever. He needs to download th reciever's public key and submit that public key while encrypting the files. the same public key holder was having the private key. with that secret key, the reciever can able to decrypt the files.</p>
+            <p><a class="btn btn-primary" href="public-key-directory" role="button">Public Key Directory </a></p>
+            </div><!-- /.col-lg-4 -->
+          
+          </div><!-- /.row -->
+    
+
+      
+	  
+  </section>
+  
+  </div>
+  
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h3>ABOUT US</h3>
+        
+          <p class="lead">This was a Simple web based cloud application for transmitting the data securely through cloud computing ! This process was completely handled by data Encryption and Decryption handling techniques.</p>
+        
+        
+      </div>
+      
+
+      <div class="footer__col">
+        <h4>Support</h4>
+        <p>FAQs</p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
+        <p>Contact Us</p>
+
+      </div>
+      <div class="footer__col">
+        <h4>Address</h4>
+        <p>
+          <span>Address:</span> Yari Road, Andheri West, 410218,
+          Mumbai
+        </p>
+        <p><span>Email:</span> info@abc.com</p>
+        <p><span>Phone:</span> +91 9876543210</p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2023 PCE New Panvel. All rights reserved.
+    </div>
+  </footer>
+	
+</body>
+</html>
+
+
+
+
